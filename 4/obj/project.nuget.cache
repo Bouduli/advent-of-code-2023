@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "GNz5E5XomEAaLaEEL2hTGP0gXfRP3Tlnmkx5rfLDC0GjcN0XoN/QRadyFo7LXGRmHqHANttm+S67ReKHrd6tXw==",
+  "dgSpecHash": "NWia8Gi8bkPO6g52u6w+4pUN//qVROZgqnJ+BJcObshtZVk0RZDxeOIk2TUgX9CJ63hTG0izEDmxaacrUMCeKQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Oliver\\source\\repos\\advent_of_code\\4\\4.csproj",
+  "projectFilePath": "C:\\Users\\Oliver\\source\\repos\\Bouduli\\advent-of-code-2023\\4\\4.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
