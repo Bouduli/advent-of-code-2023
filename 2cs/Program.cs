@@ -4,34 +4,64 @@ internal class Program
 {
     static void Main(string[] args)
     {
-        string[] lines = File.ReadAllLines(@"../../aoc2_test.txt");
-
-        foreach(string line in lines)
+        string[] lines = File.ReadAllLines(@"../../aoc2_input.txt");
+        int validGames = 0;
+        foreach (string line in lines)
         {
-            isGameValid(line);
+            int id = int.Parse(line.Split(": ")[0].Split("me ")[1]);
+            validGames += isGameValid(line);
         }
 
     }
 
 
-    static bool isGameValid(string line)
+    static int isGameValid(string inputline)
     {
-        line = line.Split(':')[1];
+        string line = inputline.Split(": ")[1];
 
         List<string> splitted = [.. line.Split(';')];
-
-        for(int i = 0; i<splitted.Count; i++)
+        //Used in output;
+        int r = 0, g = 0, b = 0;
+        for (int i = 0; i<splitted.Count; i++)
         {
             string s = splitted[i];
+            var segmented = splitted[i].Split(", ");
+            
 
-            if (s.Contains("red")) s = s.Replace("red ", "r");
-            else s = "r0" + s;
+            foreach (string inputCube in segmented)
+            {
+                string cube = inputCube.Trim();
 
-            if (s.Contains("green")) s = s.Replace("green ", "g");
-            else if (s.Contains("red")) s = s.Insert(s.IndexOf(", ") + 1, "g0");
+                int amount = int.Parse(cube.Split(' ')[0]);
+                
+                char color = cube.Split(' ')[1][0];
+
+                switch (color)
+                {
+                    case 'r':
+                        if (amount > r) r = amount;
+
+                        //if (amount > 12) return false;
+                        break;
+                    case 'g':
+                        if (amount > g) g = amount;
+                        //if (amount > 13) return false;
+                        break;
+                    case 'b':
+                        if (amount > b) b = amount;
+                        //if (amount > 14) return false;
+                        break;
+
+                    default:
+                        throw new Exception("fuck this");
+
+                }
+            }
+
             
         }
 
-        return true;
+        if (r * g * b == 0) return 0;
+        return r * g * b;
     }
 }
