@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Oliver\\source\\repos\\Bouduli\\advent-of-code-2023\\2cs\\2.csproj": {}
+    "C:\\Users\\Oliver\\Source\\Repos\\Bouduli\\advent-of-code-2023\\2cs\\2.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Oliver\\source\\repos\\Bouduli\\advent-of-code-2023\\2cs\\2.csproj": {
+    "C:\\Users\\Oliver\\Source\\Repos\\Bouduli\\advent-of-code-2023\\2cs\\2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Oliver\\source\\repos\\Bouduli\\advent-of-code-2023\\2cs\\2.csproj",
+        "projectUniqueName": "C:\\Users\\Oliver\\Source\\Repos\\Bouduli\\advent-of-code-2023\\2cs\\2.csproj",
         "projectName": "2",
-        "projectPath": "C:\\Users\\Oliver\\source\\repos\\Bouduli\\advent-of-code-2023\\2cs\\2.csproj",
+        "projectPath": "C:\\Users\\Oliver\\Source\\Repos\\Bouduli\\advent-of-code-2023\\2cs\\2.csproj",
         "packagesPath": "C:\\Users\\Oliver\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Oliver\\source\\repos\\Bouduli\\advent-of-code-2023\\2cs\\obj\\",
+        "outputPath": "C:\\Users\\Oliver\\Source\\Repos\\Bouduli\\advent-of-code-2023\\2cs\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

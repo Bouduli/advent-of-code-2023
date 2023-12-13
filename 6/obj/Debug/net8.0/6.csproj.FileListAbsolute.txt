@@ -1,0 +1,14 @@
+C:\Users\Oliver\source\repos\6\bin\Debug\net8.0\6.exe
+C:\Users\Oliver\source\repos\6\bin\Debug\net8.0\6.deps.json
+C:\Users\Oliver\source\repos\6\bin\Debug\net8.0\6.runtimeconfig.json
+C:\Users\Oliver\source\repos\6\bin\Debug\net8.0\6.dll
+C:\Users\Oliver\source\repos\6\bin\Debug\net8.0\6.pdb
+C:\Users\Oliver\source\repos\6\obj\Debug\net8.0\6.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Oliver\source\repos\6\obj\Debug\net8.0\6.AssemblyInfoInputs.cache
+C:\Users\Oliver\source\repos\6\obj\Debug\net8.0\6.AssemblyInfo.cs
+C:\Users\Oliver\source\repos\6\obj\Debug\net8.0\6.csproj.CoreCompileInputs.cache
+C:\Users\Oliver\source\repos\6\obj\Debug\net8.0\6.dll
+C:\Users\Oliver\source\repos\6\obj\Debug\net8.0\refint\6.dll
+C:\Users\Oliver\source\repos\6\obj\Debug\net8.0\6.pdb
+C:\Users\Oliver\source\repos\6\obj\Debug\net8.0\6.genruntimeconfig.cache
+C:\Users\Oliver\source\repos\6\obj\Debug\net8.0\ref\6.dll

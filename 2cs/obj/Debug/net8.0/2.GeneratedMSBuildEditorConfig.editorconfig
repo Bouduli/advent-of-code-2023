@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = _2
-build_property.ProjectDir = C:\Users\Oliver\source\repos\Bouduli\advent-of-code-2023\2cs\
+build_property.ProjectDir = C:\Users\Oliver\Source\Repos\Bouduli\advent-of-code-2023\2cs\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
