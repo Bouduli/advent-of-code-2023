@@ -33,116 +33,49 @@ internal class Program
         //If there shouldn't be added something this iteration - then toBeAdded will remain zero. 
         int toBeAdded = 0;
 
-        // if the specified item is a special character (indicated by $) then the character is 
+        // if the specified item is a special character (indicated by $) then we search around it. 
         if (representation(grid[y][x]) == '$')
         {
-            int startx = -1, endx = -1;
-            //top row.
+
+            //Top row of numbers
             if (y > 0)
             {
-                for (int i = (x - 1); i < (x + 1); i++)
-                {
-                    if (representation(grid[y - 1][i]) == '1')
-                    {
-                        if (startx == -1) startx = i;
-                        if (endx == -1) endx = i;
+                List<int> digits = [0];
+                if (x > 0) digits.Add(findDigit(grid[y - 1], x - 1));
 
-                        int tempx = startx;
-                        while (true)
-                        {
-                            if (representation(grid[y - 1][tempx]) != '1' || tempx == 0)
-                            {
-                                startx = tempx;
-                                break;
-                            }
+                digits.Add(findDigit(grid[y - 1], x));
 
-                            startx = tempx--;
-                        }
-                        tempx = i;
-                        while (true)
-                        {
-                            if (tempx == grid[0].Length)
-                            {
-                                endx--;
-                                break;
-                            }
-                            if (representation(grid[y - 1][tempx]) != '1') break;
-                            endx = tempx++;
-                        }
-
-                        string digit = grid[y - 1][startx..(endx + 1)];
-                        if ((int)digit[0] is not > 47 and < 58) digit = digit[1..];
-                        int converted = int.Parse(digit);
-                        if (digit != "") toBeAdded += int.Parse(digit);
-                    }
-
-                }
+                if (x + 1 != grid[y].Length) digits.Add(findDigit(grid[y - 1], x + 1));
+                //returns unique numbers of this row. 
+                toBeAdded += digits.ToHashSet().Sum();
             }
+            Console.WriteLine("");
 
-            startx = -1;
-            endx = -1;
+            //middle row
+            if (x > 0) Console.Write(representation(grid[y][x - 1]));
+            Console.Write(representation(grid[y][x]));
+            if (x + 1 != grid[y].Length) Console.Write(representation(grid[y][x + 1]));
 
-            if (x != 0)
+            Console.WriteLine("");
+            //bottom row
+            if (y + 1 != grid.Length)
             {
-                for (int i = (x - 1); i < (x + 1); i++)
-                {
-                    if (representation(grid[y][i]) == '1')
-                    {
-                        if (startx == -1) startx = i;
-                        if (endx == -1) endx = i;
+                if (x > 0)
+                    Console.Write(representation(grid[y+1][x - 1]));
 
-                        int tempx = startx;
-                        while (true)
-                        {
-                            if (representation(grid[y][tempx]) != '1' || tempx == 0) break;
-                            startx = tempx--;
-                        }
+                Console.Write(representation(grid[y+1][x]));
 
-
-                        string digit = grid[y - 1][startx..x];
-                        int converted = int.Parse(digit);
-                        if (digit != "") toBeAdded += int.Parse(digit);
-                    }
-                }
+                if (x + 1 != grid[y].Length)
+                    Console.Write(representation(grid[y+1][x + 1]));
             }
 
-            startx = -1;
-            endx = -1;
 
-            if (y < (grid.Length - 1))
-            {
-                for (int i = (x - 1); i < (x + 1); i++)
-                {
-                    if (representation(grid[y + 1][i]) == '1')
-                    {
-                        if (startx == -1) startx = i;
-                        if (endx == -1) endx = i;
 
-                        int tempx = startx;
-                        while (true)
-                        {
-                            if (representation(grid[y + 1][tempx]) != '1' || tempx == 0) break;
-                            startx = tempx--;
-                        }
-                        tempx = i;
-                        while (true)
-                        {
-                            if (tempx == grid[0].Length)
-                            {
-                                endx--;
-                                break;
-                            }
-                            if (representation(grid[y + 1][tempx]) != '1') break;
-                            endx = tempx++;
-                        }
 
-                        string digit = grid[y + 1][startx..(endx + 1)];
-                        int converted = int.Parse(digit);
-                        if (digit != "") toBeAdded += int.Parse(digit);
-                    }
 
-                }
-            }
+            
+            
+            
             
 
         }
@@ -156,4 +89,28 @@ internal class Program
 
         _ => '$'
     };
+
+    public static int findDigit(string row, int start)
+    {
+        if (representation(row[start]) != '1') return 0;
+
+        int startx=start, endx=start;
+        while (startx!=0)
+        {
+            if (representation(row[--startx]) != '1')
+            {
+                startx++;
+                break;
+            }
+            
+        }
+        while (endx != row.Length)
+        {
+            if (representation(row[++endx]) != '1') break;
+        }
+
+        string digit = row[startx..endx];
+
+        return int.Parse(digit);
+    }
 }
